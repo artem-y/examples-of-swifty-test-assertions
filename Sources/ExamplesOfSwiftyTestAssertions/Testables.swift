@@ -1,3 +1,5 @@
+// Simple code samples that can be used in tests for demonstrations.
+
 import Foundation
 
 extension [String] {

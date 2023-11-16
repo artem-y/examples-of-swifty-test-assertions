@@ -17,7 +17,7 @@ let package = Package(
         .target(
             name: "ExamplesOfSwiftyTestAssertions"),
         .testTarget(
-            name: "ExamplesOfSwiftyTestAssertionsTests",
+            name: "ExampleTests",
             dependencies: [
                 "ExamplesOfSwiftyTestAssertions",
                 .product(name: "SwiftyTestAssertions", package: "swifty-test-assertions"),
