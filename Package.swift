@@ -11,13 +11,13 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "git@github.com:artem-y/swifty-test-assertions.git", branch: "main"),
+        .package(url: "git@github.com:artem-y/swifty-test-assertions.git", from: "0.1.0"),
     ],
     targets: [
         .target(
             name: "ExamplesOfSwiftyTestAssertions"),
         .testTarget(
-            name: "ExamplesOfSwiftyTestAssertionsTests",
+            name: "ExampleTests",
             dependencies: [
                 "ExamplesOfSwiftyTestAssertions",
                 .product(name: "SwiftyTestAssertions", package: "swifty-test-assertions"),
