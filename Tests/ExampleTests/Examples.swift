@@ -28,4 +28,16 @@ final class Examples: XCTestCase {
             throwsError: Array<Int>.Error.indexOutOfRange // Then
         )
     }
+
+    // MARK: - AssertAsync throwsError
+
+    func test_removeElementAfterDelay_atIndexOutOfBounds_throwsIndexOutOfRangeError() async {
+        // Given
+        var sut = [1, 2, 3, 4, 5, 6]
+
+        await AssertAsync(
+            try await sut.removeElement(at: 6, afterDelay: 100), // When
+            throwsError: Array<Int>.Error.indexOutOfRange // Then
+        )
+    }
 }
