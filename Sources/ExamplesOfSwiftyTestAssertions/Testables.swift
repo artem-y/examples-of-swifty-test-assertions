@@ -22,4 +22,15 @@ extension Array {
         guard indices.contains(index) else { throw Error.indexOutOfRange }
         return remove(at: index)
     }
+
+    /// Async version of `removeElement`, safely removes an element from the array after delay.
+    /// - parameter index: Index of element to remove.
+    /// - parameter nanoseconds: Delay in nanoseconds to wait before removal.
+    /// - returns: Removed element.
+    /// - throws: Index out of range error, when given index is out of bounds of the array.
+    mutating func removeElement(at index: Int, afterDelay nanoseconds: UInt64 = 0) async throws -> Element {
+        try await Task.sleep(nanoseconds: nanoseconds)
+        guard indices.contains(index) else { throw Error.indexOutOfRange }
+        return remove(at: index)
+    }
 }
